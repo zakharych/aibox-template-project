@@ -1,0 +1,22 @@
+{:ns system
+ :import #{aidbox}
+
+ box
+ {:zen/tags #{aidbox/system}
+  :zen/desc "Test server"
+  :services {:seed seed}}
+
+ seed
+ {:zen/tags  #{aidbox/service}
+  :engine    aidbox/seed
+  :resources [{:id "my-access-policy"
+               :resourceType "AccessPolicy"
+               :engine "allow"}
+              {:secret "verysecret"
+               :grant_types ["password"]
+               :id "test-client"
+               :resourceType "Client"}
+              {:email "test@gmail.com"
+               :password "password"
+               :id "test-user"
+               :resourceType "User"}]}}
