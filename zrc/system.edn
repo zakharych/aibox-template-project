@@ -45,6 +45,23 @@
                    :link   [{:resourceType "User" :id #env AIDBOX_ADMIN_ID}
                             {:resourceType "Client" :id #env AIDBOX_CLIENT_ID}]}}}}
 
+ 
+ 
+  seed
+ {:zen/tags  #{aidbox/service}
+  :engine    aidbox/seed
+  :resources [{:id "my-access-policy"
+               :resourceType "AccessPolicy"
+               :engine "allow"}
+              {:secret "verysecret"
+               :grant_types ["password"]
+               :id "test-client"
+               :resourceType "Client"}
+              {:email "test@gmail.com"
+               :password "password"
+               :id "test-user"
+               :resourceType "User"}]}}
+ 
  box
  {:zen/tags #{aidbox/system}
   :config   aidbox-config

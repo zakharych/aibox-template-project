@@ -21,7 +21,7 @@ services:
     ports:
       - "${AIDBOX_PORT}:${AIDBOX_PORT}"
     volumes:
-      - "./aidbox-project:/project"
+      - ".:/project"
     env_file:
       - .env
     environment:
