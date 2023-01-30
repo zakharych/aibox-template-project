@@ -6,7 +6,7 @@ services:
     ports:
       - "${PGHOSTPORT}:${PGPORT}"
     volumes:
-    - "./pgdata:/data"
+      - "./pgdata:/data"
     environment:
       POSTGRES_USER:     "${PGUSER}"
       POSTGRES_PASSWORD: "${PGPASSWORD}"
@@ -21,11 +21,12 @@ services:
     ports:
       - "${AIDBOX_PORT}:${AIDBOX_PORT}"
     volumes:
-      - ".:/project"
+      - "./:${BOX_PROJECT_GIT_TARGET__PATH}"
     env_file:
       - .env
     environment:
-      PGHOST: database
+      PGHOST: aidbox-db
+      PGPORT: "${PGPORT}"
 
   aidbox-healthcheck:
       image: curlimages/curl
