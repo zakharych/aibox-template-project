@@ -1,0 +1,13 @@
+{:ns     seed
+ :import #{aidbox}
+
+ resources
+ {:zen/tags  #{aidbox/service}
+  :engine    aidbox/seed-v2
+  :resources {:AccessPolicy {:my-access-policy {:engine "allow"}}
+              :Client {:test-client {:secret "verysecret"
+                                     :grant_types ["password"]}}
+              :User {:test-user {:password "password"
+                                 :email "test@gmail.com"}}
+              :Patient {:test-patient-1 {}
+                        :test-patient-2 {}}}}}

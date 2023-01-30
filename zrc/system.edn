@@ -1,6 +1,7 @@
 {:ns     system
  :import #{aidbox
-           aidbox.config}
+           aidbox.config
+           seed}
 
  db-config
  {:zen/tags #{aidbox.config/db}
@@ -59,24 +60,9 @@
 
 
 
- seed
- {:zen/tags  #{aidbox/service}
-  :engine    aidbox/seed-v2
-  :resources [{:id "my-access-policy"
-               :resourceType "AccessPolicy"
-               :engine "allow"}
-              {:secret "verysecret"
-               :grant_types ["password"]
-               :id "test-client"
-               :resourceType "Client"}
-              {:email "test@gmail.com"
-               :password "password"
-               :id "test-user"
-               :resourceType "User"}
-              {:id "test-patient"
-               :resourceType "Patient"}]}
+
  box
  {:zen/tags #{aidbox/system}
   :config   zen-config
   :services {:seed admin-seed
-             :my-resources seed}}}
+             :my-resources seed/resources}}}
