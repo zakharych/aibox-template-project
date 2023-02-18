@@ -9,5 +9,18 @@
                                      :grant_types ["password"]}}
               :User {:test-user {:password "password"
                                  :email "test@gmail.com"}}
-              :Patient {:test-patient-1 {}
-                        :test-patient-2 {}}}}}
+              :Patient {:demo-patient-1 {:name [{:use "official"
+                                                 :family "Vader"
+                                                 :given ["Anakin"]}]
+                                         :gender "male"
+                                         :birthDate "1990-02-13"}
+                        :demo-patient-2 {:name [{:use "official"
+                                                 :family "Kenobi"
+                                                 :given ["Obi-Wan"]}]
+                                         :gender "male"
+                                         :birthDate "1964-06-18"}
+                        :demo-patient-3 {:name [{:use "official"
+                                                 :family "Tano"
+                                                 :given ["Ahsoka"]}]
+                                         :gender "female"
+                                         :birthDate "1994-01-05"}}}}}
